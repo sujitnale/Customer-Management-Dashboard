@@ -1,0 +1,45 @@
+<div class="ctnr-nav-control">
+</div>
+<div align="center">
+  <h2 class="input-type">
+    Customer Management Dashboard
+  </h2>
+  <h3 class="ctnr-logo">Enter Your Login Credentials</h3>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <table class="form-group">
+        <tbody>
+          <tr>
+            <td class="input-type-label">
+              <label class="form-label">Email</label>
+            </td>
+            <td>
+              <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            </td>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required" class="msg-error">Email is required</div>
+              <div *ngIf="f.email.errors.email" class="msg-error">Email must be a valid email address</div>
+            </div>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="input-type-label">
+              <label class="form-label">Password</label>
+            </td>
+            <td>
+              <input type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            </td>  
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required" class="msg-error">Password is required</div>
+              <div *ngIf="f.password.errors.pattern" class="msg-error">Password should be atleast 6 charactor long</div>
+            </div>
+          </tr>
+        </tbody>
+        </table>
+        <div class="text-center">
+            <button class="btn-5">Submit</button>
+        </div>
+    </form>
+</div>
+</div>

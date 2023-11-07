@@ -1,0 +1,56 @@
+<div class="page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <div class="comp-cat">
+              <label for="firstName">First Name</label>
+              <input type="text" [(ngModel)]="firstname" formControlName="firstName" 
+              class="ctnr-logo" name="firstName"
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            </div>
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required" class="msg-error">First Name is required</div>
+            </div>
+
+            <div class="comp-cat">
+              <label for="lastName">Last Name</label>
+              <input type="text" [(ngModel)]="lastname" formControlName="lastName" 
+              class="ctnr-logo"  name="lastName"
+              [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            </div>
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required" class="msg-error">Last Name is required</div>
+            </div>
+
+            <div class="comp-cat">
+              <label for="email">Email</label>
+              <input type="email" [(ngModel)]="emaill" formControlName="email" 
+              class="ctnr-logo"  name="email"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            </div>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required" class="msg-error">Email is required</div>
+                <div *ngIf="f.email.errors.email" class="msg-error">Email must be a valid email address</div>
+            </div>
+  
+            <div class="comp-cat">
+              <label for="phoneNumber">Phone Number</label>
+              <input type="number" [(ngModel)]="phonenumber" formControlName="phoneNumber" 
+              class="ctnr-logo" name="phoneNumber"
+              [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+            </div>
+            <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                <div *ngIf="f.phoneNumber.errors.required" class="msg-error">Phone Number is required</div>
+            </div>
+  
+            <div class="text-center">
+              <button class="btn-5">Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
