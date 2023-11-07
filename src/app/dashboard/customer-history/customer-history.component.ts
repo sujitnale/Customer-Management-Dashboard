@@ -49,7 +49,7 @@ export class CustomerHistoryComponent implements OnInit {
 
   search() {
     const searchRequest = {
-      searchParam: this.searchParam,
+      searchParam: this.searchParam.toLowerCase(),
     };
     if (searchRequest.searchParam != '' ) {
       //this.data.authorizationVerification(searchRequest).subscribe(res => {
