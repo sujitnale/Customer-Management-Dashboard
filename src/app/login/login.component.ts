@@ -1,5 +1,5 @@
 import { Credential } from '../core/entity/credential';
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy  } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -7,7 +7,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
   //private loginResponse: LoginResponce;

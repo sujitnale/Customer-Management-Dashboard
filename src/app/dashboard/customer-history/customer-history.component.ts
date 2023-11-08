@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -8,7 +8,8 @@ import { BaseHttpService } from 'src/app/core/services/base-http.service';
 @Component({
   selector: 'customer-history',
   templateUrl: './customer-history.component.html',
-  styleUrls: ['./customer-history.component.css']
+  styleUrls: ['./customer-history.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerHistoryComponent implements OnInit {
   getFormStackHistory: any;

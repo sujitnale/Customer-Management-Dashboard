@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BaseHttpService } from 'src/app/core/services/base-http.service';
@@ -6,7 +6,8 @@ import { BaseHttpService } from 'src/app/core/services/base-http.service';
 @Component({
   selector: 'add-edit-customer',
   templateUrl: './add-edit-customer.component.html',
-  styleUrls: ['./add-edit-customer.component.scss']
+  styleUrls: ['./add-edit-customer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddEditCustomerComponent {
   form!: FormGroup;

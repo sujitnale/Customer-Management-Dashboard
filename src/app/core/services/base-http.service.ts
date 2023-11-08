@@ -179,6 +179,7 @@ export class BaseHttpService {
         newCustomer.delete = "Delete";
         this.custInfo.push(newCustomer);
       }
+      this.custInfo = [...this.custInfo];
      return of(this.custInfo);
     }
 
@@ -188,13 +189,4 @@ export class BaseHttpService {
        });
        return of(filtered);
     }
-
- 
-    // public getByID(id: number): Observable<any> {
-    //   return this.httpClient.get(`${SERVER_API_URL}/${this.basePath}/${id}`);
-    // }
-
-    // public getExternal(url): Observable<any> {
-    //   return this.httpClient.get(url);
-    // }
   }
